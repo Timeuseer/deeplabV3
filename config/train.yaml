@@ -1,0 +1,58 @@
+#是否使用eager模式训练
+eager: False
+#训练时用到的GPU
+train_gpu: [0,]
+#需要分类的个数+1
+num_classes: 21
+#使用的主干网络类型
+backbone: mobilenet
+#模型路径
+model_path: E:\010-GabrielBlog\deeplabV3\model_data\deeplabv3_mobilenetv2.h5
+#下采样因子
+downsample_factor: 16
+#输入图片大小
+input_shape:
+  - 512
+  - 512
+#冻结阶段训练参数
+#训练开始的训练世代
+Init_Epoch: 0
+#模型冻结训练的世代
+Freeze_Epoch: 50
+#冻结训练时的批大小
+Freeze_batch_size: 8
+#解冻阶段训练参数
+#模型解冻阶段训练的总世代
+UnFreeze_Epoch: 100
+#解冻阶段的批大小
+UnFreeze_batch_size: 4
+#是否进行冻结训练
+Freeze_Train: True
+#模型的最大学习率
+Init_lr: 0.007
+#优化器种类 adam/sgd
+optimizer_type: sgd
+#优化器内部参数
+momentum: 0.9
+#学习率下降方式 cos/step
+lr_decay_type: cos
+#多少个世代保存一次权值
+save_period: 5
+#权值与日志文件保存的文件夹
+save_dir: logs
+#是否训练时进行评估
+eval_flag: True
+#多少个世代评估一次
+eval_period: 5
+#数据集路径
+VOCdevkit_path: E:\011-Dataset\VOCdevkit\
+#是否使用dice_loss
+#建议选项：
+#种类少（几类）时，设置为True
+#种类多（十几类）时，如果batch_size比较大（10以上），那么设置为True
+#种类多（十几类）时，如果batch_size比较小（10以下），那么设置为False
+dice_loss: False
+#是否使用focal_loss解决正负样本不平衡
+focal_loss: False
+#是否使用多线程训练
+num_workers: 1

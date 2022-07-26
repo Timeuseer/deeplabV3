@@ -1,0 +1,54 @@
+#mode用于指定测试的模式：
+#predict:表示单张图片预测，如果想对预测过程进行修改，如保存图片，截取对象等，可以先看下方详细的注释
+#video:表示视频检测，可调用摄像头或者视频进行检测，详情查看下方注释。
+#fps:表示测试fps，使用的图片是img里面的street.jpg，详情查看下方注释。
+#dir_predict:表示遍历文件夹进行检测并保存。默认遍历img文件夹，保存img_out文件夹，详情查看下方注释。
+mode: predict
+
+#以下两个参数只在 predict 模式下生效
+#是否计算目标的像素点计数与比例计算
+count: False
+#区分的种类
+name_classes:
+  - background
+  - aeroplane
+  - bicycle
+  - bird
+  - boat
+  - bottle
+  - bus
+  - car
+  - cat
+  - chair
+  - cow
+  - diningtable
+  - dog
+  - horse
+  - motorbike
+  - person
+  - pottedplant
+  - sheep
+  - sofa
+  - train
+  - tvmonitor
+
+#以下三个参数只在 video 模式下生效
+#用于指定视频的路径，为0时表示检测摄像头
+video_path: 0
+#视频的保存路径
+video_save_path: output/
+#用于保存的视频的fps
+video_fps: 25.0
+
+#以下两个参数只在 fps 模式下生效
+#用于指定测量fps的时候，图片的检测次数，越大越准确
+test_interval: 100
+#用于指定测试的fps图片
+fps_image_path: img/stret.jpg
+
+#以下两个参数只在 dir_predict 模式下生效
+#指定用于检测的图片的文件夹路径
+dir_origin_path: img/
+#检测结果的保存路径
+dir_save_path: img_out/
+

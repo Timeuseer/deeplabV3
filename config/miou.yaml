@@ -1,0 +1,33 @@
+#miou_mode用于指定该文件运行时计算的内容
+#miou_mode为0代表整个miou计算流程，包括获得预测结果、计算miou。
+#miou_mode为1代表仅仅获得预测结果。
+#miou_mode为2代表仅仅计算miou。
+miou_mode: 0
+#分类个数+1
+num_classes : 21
+#区分的种类
+name_classes:
+  - background
+  - aeroplane
+  - bicycle
+  - bird
+  - boat
+  - bottle
+  - bus
+  - car
+  - cat
+  - chair
+  - cow
+  - diningtable
+  - dog
+  - horse
+  - motorbike
+  - person
+  - pottedplant
+  - sheep
+  - sofa
+  - train
+  - tvmonitor
+# 指向VOC数据集所在的文件夹
+# 默认指向根目录下的VOC数据集
+VOCdevkit_path: E:\011-Dataset\VOCdevkit

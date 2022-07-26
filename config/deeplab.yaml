@@ -1,0 +1,17 @@
+# 模型路径
+model_path: E:\010-GabrielBlog\deeplabV3\logs\last_epoch_weights.h5
+# 类别数量+1
+num_classes: 21
+# 主干网络类型
+backbone: mobilenet
+# 输入大小
+input_shape:
+  - 512
+  - 512
+# 下采样的倍数
+downsample_factor: 16
+# 控制检测结果的可视化方式
+# mix_type = 0的时候代表原图与生成的图进行混合
+# mix_type = 1的时候代表仅保留生成的图
+# mix_type = 2的时候代表仅扣去背景，仅保留原图中的目标
+mix_type: 0
